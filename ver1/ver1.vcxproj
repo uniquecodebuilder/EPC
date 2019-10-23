@@ -131,7 +131,7 @@
     <ClCompile Include="exit_dialog.cpp" />
     <ClCompile Include="login_dialog.cpp" />
     <ClCompile Include="main_window.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="exit_dialog.h" />

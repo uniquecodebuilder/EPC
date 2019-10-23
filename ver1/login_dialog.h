@@ -2,6 +2,12 @@
 #include <FL/Fl_Window.H>
 #include <string>
 #include <iostream>
+#include <FL/Fl_Button.H>
+#include <FL/Fl.H>
+#include <FL/fl_ask.H>
+#include <FL/Fl_Widget.H>
+#include <FL/Fl_Box.H>
+
 
 
 using namespace std;
@@ -10,36 +16,22 @@ using namespace std;
 class login_dialog
 {
 
-
 public:
 	//open variables or functions
 
-	void show()
+	int lgn_win()
 	{
-		Fl_Window win1(600, 400, "EPC");
+		Fl_Window win1(400, 200, "Login");
 		win1.show();
-		 
+		win1.position(400, 300);
+	
+		return Fl::run();
+		exit(0);
+	
 	}
-
-	void login_msg() {
-		cout << "Hello" << endl;  
-		
-	}
-
-	void set_cred (string epc_usr, string epc_psw) {
-		lgn = epc_usr;
-		psw = epc_psw;
-	}
-
-	void get_cred() {
-
-	};
 
 	
 
-private:
-	//hidden variables or functions
-	string lgn;
-	string psw;
+
 };
 
