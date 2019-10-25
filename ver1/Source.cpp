@@ -24,6 +24,6 @@ int main()
 
 	mw.show();
 
-	//system("pause");
+	system("pause");
 	return Fl::run();
 }
