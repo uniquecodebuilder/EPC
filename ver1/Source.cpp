@@ -8,22 +8,31 @@ using namespace std;
 int main()
 {
 
-	//login_dialog win1;
-	//win1.lgn_win();
+	login_dialog lgn_win;
+	//lgn_win.show();
 
-	main_window mw;
+	/*lgn_win.on_login(
+		[&lgn_win]() {
+			cout << "login handler called\n";
+
+			lgn_win.hide();
+		}
+	);*/
 
 
-	mw.on_exit(
-		[&mw]() {
-			std:: cout << "exit handler called\n";
 
-			mw.hide();
+	main_window mn_win;
+
+	mn_win.on_exit(
+		[&mn_win]() {
+			cout << "exit handler called\n";
+
+			mn_win.hide();
 		}
 	);
 
-	mw.show();
+	mn_win.show();
 
-	system("pause");
+	
 	return Fl::run();
 }

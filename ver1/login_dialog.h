@@ -1,45 +1,70 @@
 #pragma once
-#include <FL/Fl_Window.H>
 #include <string>
 #include <iostream>
-#include <FL/Fl_Button.H>
+#include <functional>
+
 #include <FL/Fl.H>
+#include <FL/Fl_Window.H>
+#include <FL/Fl_Button.H>
+#include <FL/Fl_Window.H>
+#include <FL/Fl_Button.H>
 #include <FL/fl_ask.H>
 #include <FL/Fl_Widget.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Input.H>
 
-
 using namespace std;
 
-class login_dialog
-{
+class login_dialog {
 
-public:
-
-	int lgn_win()
-
+	/*static void on_login_clicked(Fl_Widget*, void* v)
 	{
-		
-		Fl_Window win1(400, 200, "Login");
-		win1.begin();
-		win1.position(400, 300);
-
-		Fl_Button btn1(310, 150, 60, 30, "Login");
-		btn1.callback();
-
-		Fl_Input lgn (30, 30, 340, 30);
-		lgn.show();
-
-		Fl_Input psw(30, 80, 340, 30);
-		lgn.show();
-	
-		win1.end();
-		win1.show();
-
-		return 0;
-	
+		((login_dialog*)v)->on_login_clicked_i();
 	}
 
-};
+	void on_login_clicked_i()
+	{
+		cout << "login dialog exit\n";
+		main_window();
+	}*/
 
+public:
+	login_dialog()
+		: window(400, 200, "Policlinic #1"),
+		btnLgn(310, 145, 60, 30, "Login"),
+		lgnInp(30, 30, 340, 30),
+		pswInp(30, 80, 340, 30)
+	{
+
+		window.position(400, 300);
+		//btnLgn.callback();
+
+		window.end();
+	}
+
+	void show()
+	{
+		window.show();
+	}
+
+	void hide()
+	{
+		window.hide();
+	}
+
+	/*void on_login(function<void()> handler)
+	{
+		main_window = handler;
+	}*/
+
+private:
+	Fl_Window window;
+
+	Fl_Button btnLgn;
+	Fl_Input lgnInp;
+	Fl_Input pswInp;
+
+	//string lgn;
+	//string psw;
+	//function<void()> main_window;
+};

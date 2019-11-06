@@ -12,6 +12,8 @@
 #include <FL/Fl_Widget.H>
 #include <FL/Fl_Box.H>
 
+using namespace std;
+
 
 
 
@@ -24,42 +26,41 @@ class main_window{
 
 	void on_exit_clicked_i()
 	{
-		std::cout << "main window exit\n";
+		cout << "main window exit\n";
 		exit_handler();
 	}
 
 public:
 	main_window()
 	: window(800, 600, "EPC"),
-		btnExit(710, 20, 60, 30, "Exit")
+		btnExit(710, 20, 60, 30, "Exit"),
+		btnDoc(30, 20, 60, 30, "Doctor"),
+		btnPat(110, 20, 60, 30, "Patient"),
+		btnEPC(190, 20, 60, 30, "EPC"),
+		btnAdd(30, 550, 60, 30, "Add"),
+		btnEdit(110, 550, 60, 30, "Edit"),
+		btnDel(190, 550, 60, 30, "Delete")
 	{
 		//window.begin();
 		window.position(200, 100);
 
 		btnExit.callback(on_exit_clicked, this);
 
-		//Fl_Button btn2(30, 20, 60, 30, "Doctor");
-		//btn2.callback();
-		//
-		//Fl_Button btn3(110, 20, 60, 30, "Patient");
-		//btn3.callback();
-		//
-		//Fl_Button btn4(190, 20, 60, 30, "EPC");
-		//btn4.callback();
-		//
-		//Fl_Button btn5(30, 550, 60, 30, "Add");
-		//btn5.callback();
-		//
-		//Fl_Button btn6(110, 550, 60, 30, "Edit");
-		//btn6.callback();
-		//
-		//Fl_Button btn7(190, 550, 60, 30, "Delete");
-		//btn7.callback();
+		//btnDoc.callback();
+		
+		//btnPat.callback();
+	
+		//btnEPC.callback();
+	
+		//btnAdd.callback();
+	
+		//btnEdit.callback();
+
+		//btnDel.callback();
 
 		window.end();
 	}
 	
-
 	void show()
 	{
 		window.show();
@@ -70,7 +71,7 @@ public:
 		window.hide();
 	}
 
-	void on_exit(std::function<void()> handler)
+	void on_exit(function<void()> handler)
 	{
 		exit_handler = handler;
 	}
@@ -78,7 +79,13 @@ public:
 private:
 	Fl_Window window;
 
+	Fl_Button btnAdd;
+	Fl_Button btnEdit;
+	Fl_Button btnDel;
+	Fl_Button btnEPC;
+	Fl_Button btnPat;
+	Fl_Button btnDoc;
 	Fl_Button btnExit;
-	std::function<void()> exit_handler;
+	function<void()> exit_handler;
 };
  
