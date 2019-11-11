@@ -128,15 +128,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="exit_dialog.cpp" />
-    <ClCompile Include="login_dialog.cpp" />
-    <ClCompile Include="main_window.cpp" />
+    <ClCompile Include="BusinessLogic\login_manager.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UI\doctor_widget.cpp" />
+    <ClCompile Include="UI\epc_widget.cpp" />
+    <ClCompile Include="UI\exit_dialog.cpp" />
+    <ClCompile Include="UI\login_dialog.cpp" />
+    <ClCompile Include="UI\main_window.cpp" />
+    <ClCompile Include="UI\patient_widget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="exit_dialog.h" />
-    <ClInclude Include="login_dialog.h" />
-    <ClInclude Include="main_window.h" />
+    <ClInclude Include="BusinessLogic\login_manager.h" />
+    <ClInclude Include="UI\doctor_widget.h" />
+    <ClInclude Include="UI\epc_widget.h" />
+    <ClInclude Include="UI\exit_dialog.h" />
+    <ClInclude Include="UI\login_dialog.h" />
+    <ClInclude Include="UI\main_window.h" />
+    <ClInclude Include="UI\patient_widget.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
